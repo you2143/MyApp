@@ -8,15 +8,17 @@ namespace MyApp.Domain.Users
 {
     public class User : IEquatable<User>
     {
-        private readonly UserId id;
+        private readonly string id;
         private string userName;
-        public User(UserId id, string userName)
+        private decimal number;
+        public User(string id, string userName, decimal number)
         {
             this.id = id;
             this.userName = userName;
+            this.number = number;
         }
 
-        public UserId Id
+        public string Id
         {
             get { return id; }
         }
@@ -24,6 +26,11 @@ namespace MyApp.Domain.Users
         public string UserName
         {
             get { return userName; }
+        }
+
+        public decimal Number
+        {
+            get { return number; }
         }
 
         public void ChangeUserName(string newName)

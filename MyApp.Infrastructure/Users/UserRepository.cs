@@ -9,7 +9,7 @@ namespace MyApp.Infrastructure.Users
 {
     class UserRepository : IUserRepository
     {
-        public User Find(UserId id)
+        public User Find(string id)
         {
             throw new NotImplementedException();
         }

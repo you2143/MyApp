@@ -8,7 +8,7 @@ namespace MyApp.Domain.Users
 {
     public interface IUserRepository
     {
-        User Find(UserId id);
+        User Find(string id);
         IEnumerable<User> FindAll();
         void Save(User user);
         void Remove(User user);
