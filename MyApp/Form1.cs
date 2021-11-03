@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MyApp.Application.Output;
+using MyApp.Application.Users;
 
 namespace MyApp
 {
@@ -15,19 +16,34 @@ namespace MyApp
     {
         public Form1()
         {
+            // DataGridにボタンを表示するのはフォームのプロパティで設定している
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            // DataSourceにデータを追加したときに列が追加されないようにする
+            // https://tmg0525.hatenadiary.jp/entry/2017/11/24/163727
+            dataGridView1.AutoGenerateColumns = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var excelCreator = new ExcelCreator();
-            excelCreator.Create();
-            MessageBox.Show("完了");
+            var test = new UserApplicationService().GetAllUserData();
+
+            // クラスのデータとDataGridの紐づけはフォーム内のDataGrid内で行っている
+            // 以下のURLを参照
+            // https://tmg0525.hatenadiary.jp/entry/2017/11/24/163727
+            dataGridView1.DataSource = test.ToList();
+            //var excelCreator = new ExcelCreator();
+            //excelCreator.Create();
+            //MessageBox.Show("完了");
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // ボタン列でイベントを処理する場合は以下のURLを参考に
+            // https://stackoverflow.com/questions/3577297/how-to-handle-click-event-in-button-column-in-datagridview/13687844
         }
     }
 }
