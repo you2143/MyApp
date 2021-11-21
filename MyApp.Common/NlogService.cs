@@ -13,7 +13,15 @@ namespace MyApp.Common
 
         public static void PrintInfoLog(string str)
         {
-            logger.Info(str);
+            //try
+            //{
+                logger.Info(str);
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine(ex);
+            //}
+            
         }
     }
 }
