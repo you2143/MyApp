@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MyApp.Application.Output;
 using MyApp.Application.Users;
+using MyApp.Common;
+using MyApp.Infrastructure;
 
 namespace MyApp
 {
@@ -44,6 +46,17 @@ namespace MyApp
         {
             // ボタン列でイベントを処理する場合は以下のURLを参考に
             // https://stackoverflow.com/questions/3577297/how-to-handle-click-event-in-button-column-in-datagridview/13687844
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var con = new OracleConnect();
+            con.connect();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            NLogService.PrintInfoLog("Hello World");
         }
     }
 }
