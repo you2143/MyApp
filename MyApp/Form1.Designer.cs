@@ -44,6 +44,9 @@ namespace MyApp
             this.View = new System.Windows.Forms.DataGridViewButtonColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.TxtEmployeeId = new System.Windows.Forms.TextBox();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -161,11 +164,41 @@ namespace MyApp
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(25, 413);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 24);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "データ作成";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // TxtEmployeeId
+            // 
+            this.TxtEmployeeId.Location = new System.Drawing.Point(25, 376);
+            this.TxtEmployeeId.Name = "TxtEmployeeId";
+            this.TxtEmployeeId.Size = new System.Drawing.Size(100, 19);
+            this.TxtEmployeeId.TabIndex = 5;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(167, 413);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(85, 23);
+            this.button5.TabIndex = 6;
+            this.button5.Text = "データ読みこみ";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.TxtEmployeeId);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView1);
@@ -175,6 +208,7 @@ namespace MyApp
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -191,6 +225,9 @@ namespace MyApp
         private System.Windows.Forms.DataGridViewButtonColumn View;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox TxtEmployeeId;
+        private System.Windows.Forms.Button button5;
     }
 }
 

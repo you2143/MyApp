@@ -122,6 +122,10 @@
       <Project>{f15f7bee-027a-41ca-9e66-cf927d575e38}</Project>
       <Name>MyApp.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MyApp.Domain\MyApp.Domain.csproj">
+      <Project>{6133a4ca-a43c-4d32-b807-f47dd0f39770}</Project>
+      <Name>MyApp.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MyApp.Infrastructure\MyApp.Infrastructure.csproj">
       <Project>{6afebbd6-9574-41de-8be4-6d734d454403}</Project>
       <Name>MyApp.Infrastructure</Name>

@@ -47,11 +47,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OracleConnect.cs" />
+    <Compile Include="ConnectionInstance.cs" />
+    <Compile Include="Employee\EmployeeRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositoryBase.cs" />
     <Compile Include="Users\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MyApp.Application\MyApp.Application.csproj">
+      <Project>{e2332199-9bad-4837-a050-29e3d4000eed}</Project>
+      <Name>MyApp.Application</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MyApp.Domain\MyApp.Domain.csproj">
       <Project>{6133a4ca-a43c-4d32-b807-f47dd0f39770}</Project>
       <Name>MyApp.Domain</Name>

@@ -7,11 +7,25 @@ using System.Threading.Tasks;
 
 namespace MyApp.Infrastructure.Users
 {
-    class UserRepository : IUserRepository
+    class UserRepository : RepositoryBase, IUserRepository
     {
         public User Find(string id)
         {
-            throw new NotImplementedException();
+            var sql = @"SELECT * FROM USER WHERE ID = :ID";
+            var parameter = new List<KeyValuePair<string, object>>
+            {
+                new KeyValuePair<string,object>("iD",id),
+            };
+
+            var reader = this.ExecuteReader(sql, parameter);
+            if (reader.Read())
+            {
+                return new User(
+                    reader[""] as string,
+                    reader[""] as string,
+                    0);
+            }
+            return null;
         }
 
         public IEnumerable<User> FindAll()

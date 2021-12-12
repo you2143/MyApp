@@ -7,10 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MyApp.Application.Employees;
 using MyApp.Application.Output;
 using MyApp.Application.Users;
 using MyApp.Common;
 using MyApp.Infrastructure;
+using MyApp.Infrastructure.Employees;
 
 namespace MyApp
 {
@@ -50,13 +52,26 @@ namespace MyApp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var con = new OracleConnect();
-            con.connect();
+            var con = ConnectionInstance.Connection;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             NLogService.PrintInfoLog("Hello World");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var app = new EmployeeApplication(new EmployeeRepository());
+            app.CreateEmployee(TxtEmployeeId.Text);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var app = new EmployeeApplication(new EmployeeRepository());
+            // var data = app.GetEmployee(TxtEmployeeId.Text);
+            var data = app.GetAllEmployee();
+            dataGridView1.DataSource = data.ToList();
         }
     }
 }
