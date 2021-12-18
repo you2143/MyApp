@@ -66,11 +66,11 @@ namespace MyApp
             app.CreateEmployee(TxtEmployeeId.Text);
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private async void button5_Click(object sender, EventArgs e)
         {
             var app = new EmployeeApplication(new EmployeeRepository());
             // var data = app.GetEmployee(TxtEmployeeId.Text);
-            var data = app.GetAllEmployee();
+            var data = await Task.Run(() => app.GetAllEmployee());
             dataGridView1.DataSource = data.ToList();
         }
     }

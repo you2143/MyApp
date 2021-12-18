@@ -29,6 +29,7 @@ namespace MyApp.Application.Employees
         [Logger]
         public IEnumerable<Employee> GetAllEmployee()
         {
+            System.Threading.Thread.Sleep(5000);
             var data = this.EmployeeRepository.FindAll();
             return data;
         }
@@ -53,6 +54,7 @@ namespace MyApp.Application.Employees
 
                 this.EmployeeRepository.Save(employee);
 
+                transaction.Complete();
             }
         }
     }
